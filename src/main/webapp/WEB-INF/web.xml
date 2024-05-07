@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>webshop7</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<!-- context-param은 servletcontext를 통해서 읽는다. 모든 서블릿이 공유한다. -->
+	<context-param>
+		<param-name>menu_member</param-name>
+		<param-value>회원등록 회원수정 회원조회</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>menu_order</param-name>
+		<param-value>order등록 order수정 order조회</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>bankname</param-name>
+		<param-value>신한은행</param-value>
+	</context-param>
+	
+	<!-- servlet init-param은 해당 서블릿에서만 접근 가능 -->
+	<servlet>
+		<servlet-name>init2</servlet-name>
+		<servlet-class>com.shinhan.controller3.InitParamServlet</servlet-class>
+		<init-param>
+			<param-name>myname</param-name>
+			<param-value>seoyeon</param-value>
+		</init-param>
+		<init-param>
+			<param-name>email</param-name>
+			<param-value>rlatjdus0827@naver.com</param-value>
+		</init-param>
+		<init-param>
+			<param-name>phone</param-name>
+			<param-value>010-1234-5678</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	
+		
+	<resource-ref>
+		<description>Oracle Datasource example</description>
+		<res-ref-name>jdbc/myoracle2</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+</web-app>

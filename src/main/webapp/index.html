@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+
+<h1>JSP/Servlet시작!!</h1>
+<hr>
+<ul>
+<!-- /로 시작하면 앞에는 http://192.168.0.125:9090이 있는것. -->
+<!-- 상대경로시 : ./ =>현재 index.html은 webShop바로 아래에 있다. -->
+<li><a href="/webshop7/FirstServlet?userid=100">first서블릿 연결(절대경로)</a></li>
+<li><a href="FirstServlet?userid=200">first서블릿 연결(상대경로)</a></li>
+<li>
+	<form action="first" method="get">
+		<input type="text" name="userid" value="300">
+		<input type="submit" value="get요청">
+	</form>
+</li>
+<li>
+	<form action="first" method="post">
+		<input type="text" name="userid" value="400">
+		<input type="submit" value="post요청">
+	</form>
+</li>
+<hr>
+<!--
+<li>
+	<form action="emp/empDetail" method="get">
+		<input type="text" name="empid" value="100">
+		<input type="submit" value="직원정보">
+	</form>
+</li>
+
+<li>
+	<form action="dept/deptDetail" method="get">
+		<input type="text" name="empid" value="100">
+		<input type="submit" value="부서정보">
+	</form>
+</li>
+-->
+ <li><a href="/webshop7/emp/emplist.do">모든직원조회</a></li>
+<li>
+  <form action="emp/empDetail.do" method="get">
+    <input type="text" name="empid" value="100"> 
+    <input type="submit" value="직원정보">
+  </form>
+</li>
+<li><a href="/webshop7/dept/deptList.do">모든부서조회</a></li>
+<li><a href="dept/deptInsert.do">부서입력</a></li>
+<li>
+  <form action="dept/deptDetail.do" method="get">
+    <input type="text" name="deptid" value="100"> 
+    <input type="submit" value="부서정보">
+  </form>
+</li>
+<h4>jsp/set</h4>
+<li>
+	<form action="jsp/set">
+		<input type="text" name="myname" value="김서연">
+		<input type="submit" value="서버전송">
+	</form>
+</li>
+<h4>cookie</h4>
+<li>
+	<form action="jsp/cookieSet">
+		<input type="text" name="userid" value="sy0827">
+		<input type="text" name="userpass" value="0827">
+		<input type="submit" value="Login">
+	</form>
+</li>
+<h4>session</h4>
+<li>
+	<form action="jsp/setSession">
+		<input type="text" name="userid" value="sy0827">
+		<input type="text" name="userpass" value="0827">
+		<input type="submit" value="Login">
+	</form>
+</li>
+</ul>
+<hr>
+
+
+
+</body>
+</html>
